@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
     @Getter @Setter
     private CanvasPanel canvasPanel;
     public MainFrame() throws HeadlessException {
-        this.setTitle("OOP RT");
+        this.setTitle("Chain RGB");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
         this.setResizable(false);

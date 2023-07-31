@@ -9,7 +9,7 @@ import java.awt.*;
 public class ManuPanel extends JPanel {
     public static final int SPACING_INITIAL_VALUE = 5;
     public static final int RADIUS_INITIAL_VALUE = 5;
-    public static final int LENGHT_INITIAL_VALUE = 50;
+    public static final int LENGTH_INITIAL_VALUE = 50;
 
     @Getter
     private JSlider lenghtSL;
@@ -29,7 +29,7 @@ public class ManuPanel extends JPanel {
         this.setBackground(Color.GREEN);
         this.setLayout(new BorderLayout());
 
-        this.lenghtLB = new JLabel("Lenght");
+        this.lenghtLB = new JLabel("Length");
         this.radiusLB = new JLabel("Radius");
         this.spacingLB = new JLabel("Spacing");
 
@@ -37,7 +37,7 @@ public class ManuPanel extends JPanel {
         this.lenghtSL.setMinimum(20);
         this.lenghtSL.setMaximum(200);
         this.lenghtSL.setSnapToTicks(true);
-        this.lenghtSL.setValue(LENGHT_INITIAL_VALUE);
+        this.lenghtSL.setValue(LENGTH_INITIAL_VALUE);
         this.lenghtSL.setPaintTicks(true);
         this.lenghtSL.setPaintLabels(true);
         this.lenghtSL.setPaintTrack(true);

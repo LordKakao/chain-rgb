@@ -20,7 +20,7 @@ public class Logic extends UniversalAdapter {
     private MainFrame mainFrame;
     private List<Axis> dots;
     private int currentSpacing;
-    private int currentLenght;
+    private int currentLength;
     private int currentRadius;
     private Shapes currentShape;
 
@@ -28,7 +28,7 @@ public class Logic extends UniversalAdapter {
         this.mainFrame = mainFrame;
         this.dots = new ArrayList<>();
         this.currentRadius = ManuPanel.RADIUS_INITIAL_VALUE;
-        this.currentLenght = ManuPanel.LENGHT_INITIAL_VALUE;
+        this.currentLength = ManuPanel.LENGTH_INITIAL_VALUE;
         this.currentSpacing = ManuPanel.SPACING_INITIAL_VALUE;
         this.currentShape = Shapes.CIRCLE;
     }
@@ -37,7 +37,7 @@ public class Logic extends UniversalAdapter {
     public void stateChanged(ChangeEvent e) {
         if(e.getSource() instanceof JSlider && !((JSlider)e.getSource()).getValueIsAdjusting()) {
             if(e.getSource().equals(this.mainFrame.getMenu().getLenghtSL())) {
-                this.currentLenght = ((JSlider)e.getSource()).getValue();
+                this.currentLength = ((JSlider)e.getSource()).getValue();
             } else if(e.getSource().equals(this.mainFrame.getMenu().getSpacingSL())) {
                 this.currentSpacing = ((JSlider)e.getSource()).getValue();
             } else if(e.getSource().equals(this.mainFrame.getMenu().getRadiusSL())) {
@@ -106,7 +106,7 @@ public class Logic extends UniversalAdapter {
         this.mainFrame.repaint();
         this.mainFrame.revalidate();
     }
-    
+
     private Color computeColor(float i) {
         float hue = ( i/ this.dots.size() ) + 1.0f;
         return Color.getHSBColor(hue, 1, 1);
@@ -114,9 +114,9 @@ public class Logic extends UniversalAdapter {
 
     private void resolveMovement(Axis axis) {
         this.dots.add(axis);
-        if(this.currentLenght < this.dots.size()){
+        if(this.currentLength < this.dots.size()){
             List<Axis> dotsToRemove = new ArrayList<>();
-            for(int i = 0; i < this.dots.size()-this.currentLenght; i++) {
+            for(int i = 0; i < this.dots.size()-this.currentLength; i++) {
                 dotsToRemove.add(this.dots.get(i));
             }
 
